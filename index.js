@@ -9,8 +9,8 @@ var port = 5000;
 
 // Handlebars
 var handlebars = exphbs.create();
-app.engine("hbs", hbs.engine);
-app.set("view engine", "hbs");
+app.engine("handlebars", handlebars.engine);
+app.set("view engine", "handlebars");
 app.use(express.static(__dirname + "/views"));
 
 // Express session
