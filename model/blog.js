@@ -2,30 +2,29 @@ const { Sequelize, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 const User = require("../model/user");
 
-
 const Blog = sequelize.define("blogs", {
-    id: {
-        type: Sequelize.INTEGER,
-        autoIncrement: true,
-        allowNull: false,
-        primaryKey: true,
-    },
-    title: {
-        type: DataTypes.TEXT,
-        allowNull: false,
-    },
-    content: {
-        type: DataTypes.TEXT,
-        allowNull: false,
-    },
+  id: {
+    type: DataTypes.INTEGER,
+    autoIncrement: true,
+    allowNull: false,
+    primaryKey: true,
+  },
+  title: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  content: {
+    type: DataTypes.TEXT,
+    allowNull: false,
+  },
 
-    userId: {
-        type: Sequelize.INTEGER,
-        references: {
-            model: "users",
-            key: "id",
-        },
+  userId: {
+    type: DataTypes.INTEGER,
+    references: {
+      model: "users",
+      key: "id",
     },
+  },
 });
 
 Blog.belongsTo(User, { foreignKey: "userId" });

@@ -1,4 +1,5 @@
 const { Sequelize } = require("sequelize");
+require("dotenv").config();
 
 // SETUP THE DB CONFIG
 const sequelize = new Sequelize(
@@ -8,7 +9,6 @@ const sequelize = new Sequelize(
   {
     host: "localhost",
     dialect: "mysql",
-    port: 3301,
   }
 );
 
