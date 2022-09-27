@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="row g-4 justify-content-center py-5">
+        <div class="col-md-8">
+            <div class="bg-light border">
+                <div class="bg-secondary text-white px-2 pt-2 pb-1">
+                    <h6>Update post</h6>
+                </div>
+                <div class="p-3">
+                    <form method="post" action="/update/{{id}}">
+                        <div class="mb-3">
+                            <label class="form-label">Title</label>
+                            <input required value="{{title}}" name="title" type="text" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Content</label>                        
+                            <textarea required name="content" rows="5" class="form-control">{{content}}</textarea>
+                        </div>
+                        <div class="d-grid gap-2 mb-3">
+                            <button type="submit" class="btn btn-primary">update</button>
+                        </div>
+                    </form>
+
+                    <form method="post" action="/delete/{{id}}">
+                        <div class="d-grid gap-2 mb-3">
+                            <button type="submit" class="btn btn-primary">Delete</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

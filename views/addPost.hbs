@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row g-4 justify-content-center py-5">
+        <div class="col-md-8">
+            <div class="bg-light border">
+                <div class="bg-dark text-white px-2 pt-2 pb-1">
+                    <h6>Create new post</h6>
+                </div>
+                <div class="p-3">
+                    <form method="post" action="/create">
+                        <div class="mb-3">
+                            <label class="form-label">Title</label>
+                            <input required name="title" type="text" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Content</label>
+                            <textarea required name="content" class="form-control" rows="3"></textarea>
+                        </div>
+                        <div class="d-grid gap-2 mb-3">
+                            <button type="submit" class="btn btn-primary">Create</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="text-center pt-3">
+                <button class="btn btn-primary">+ New Post</button>
+            </div>
+        </div>
+    </div>
+</div>

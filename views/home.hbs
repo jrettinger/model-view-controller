@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="row g-4 justify-content-center py-5">
+        <div class="col-md-8">
+            {{#each bloglist}}
+            <a class="text-decoration-none" href="/blog-detail/{{id}}">
+                <div class="d-flex justify-content-between bg-dark text-white p-2 mb-4">
+                    <h6>{{title}}</h6>
+                    <small>Posted by {{postedby}} on {{date}}</small>
+                </div>
+            </a>
+            {{/each}}
+        </div>
+    </div>
+</div>

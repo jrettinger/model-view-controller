@@ -87,6 +87,6 @@ app.use("/", userRouter);
 app.use("/", commentRouter);
 
 
-var server = app.listen(port, function () {
+const server = app.listen(port, function () {
     console.log("Listening on port %d", server.address().port);
 });
