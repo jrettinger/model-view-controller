@@ -8,7 +8,7 @@ const session = require("express-session");
 var port = 5000;
 
 // Handlebars
-var hbs = exphbs.create();
+var handlebars = exphbs.create();
 app.engine("hbs", hbs.engine);
 app.set("view engine", "hbs");
 app.use(express.static(__dirname + "/views"));
@@ -66,26 +66,18 @@ app.get("/addPost", function (req, res) {
   }
 });
 
-const bodyParser = require("body-parser");
-app.use(
-  bodyParser.urlencoded({
-    extended: true,
-    parameterLimit: 100000,
-    limit: "500mb",
-  })
-);
-app.use(bodyParser.json());
-
 const homeRouter = require("./routes/home");
 const blogRouter = require("./routes/blog");
 const userRouter = require("./routes/user");
 const commentRouter = require("./routes/comment");
+const sequelize = require("sequelize");
 
 app.use("/", homeRouter);
 app.use("/", blogRouter);
 app.use("/", userRouter);
 app.use("/", commentRouter);
 
-var server = app.listen(port, function () {
-  console.log("Listening on port %d", server.address().port);
+app.listen(PORT, () => {
+  console.log("App listening on port ${PORT}!");
+  sequelize.sync({ force: false });
 });
