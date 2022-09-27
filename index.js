@@ -1,14 +1,14 @@
-const express = require("express");
-const exphbs = require("express-handlebars");
-const app = express();
+var express = require("express");
+var exphbs = require("express-handlebars");
+var app = express();
 require("dotenv").config();
 const flash = require("connect-flash");
 const session = require("express-session");
 
-const port = 5000;
+var port = 5000;
 
 // Handlebars
-const hbs = exphbs.create();
+var hbs = exphbs.create();
 app.engine("hbs", hbs.engine);
 app.set("view engine", "hbs");
 app.use(express.static(__dirname + "/views"));
