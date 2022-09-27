@@ -1,16 +1,16 @@
-const { User } = require('../models');
+const { User } = require("../models");
 
 const userData = [
-    {
-        username: "jrettinger",
-        email: "jason.rettinger@gmail.com",
-        password: "password1"
-    },
-    {
-        username: "mjthegoat",
-        email: "mj23@gmail.com",
-        password: "6rings"
-    },
+  {
+    username: "jrettinger",
+    email: "jason.rettinger@gmail.com",
+    password: "$2a$10$CxYJ3irYZ4oqrTSVe2aRj.5dkRmZiOUq9sfJmBzrSgXRc19ir41AO", // password is password
+  },
+  {
+    username: "mjthegoat",
+    email: "mj23@gmail.com",
+    password: "$2a$10$CxYJ3irYZ4oqrTSVe2aRj.5dkRmZiOUq9sfJmBzrSgXRc19ir41AO", // password is password
+  },
 ];
 
 const seedUsers = () => User.bulkCreate(userData);
