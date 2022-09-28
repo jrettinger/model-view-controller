@@ -1,6 +1,8 @@
-var express = require("express");
-var exphbs = require("express-handlebars");
-var app = express();
+const PORT = process.env.PORT || 3000;
+
+const express = require("express");
+const exphbs = require("express-handlebars");
+const app = express();
 require("dotenv").config();
 const flash = require("connect-flash");
 const session = require("express-session");
