@@ -1,12 +1,14 @@
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3000;
 
-const sequelize = require("sequelize");
 const express = require("express");
 const exphbs = require("express-handlebars");
 const app = express();
 require("dotenv").config();
 const flash = require("connect-flash");
 const session = require("express-session");
+
+const sequelize = require("./db/connection");
+const SequelizeStore = require("connect-session-sequelize")(session.Store);
 
 // Handlebars
 var handlebars = exphbs.create();
