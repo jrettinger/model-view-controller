@@ -1,5 +1,6 @@
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
+const sequelize = require("sequelize");
 const express = require("express");
 const exphbs = require("express-handlebars");
 const app = express();
@@ -70,14 +71,12 @@ const homeRouter = require("./routes/home");
 const blogRouter = require("./routes/blog");
 const userRouter = require("./routes/user");
 const commentRouter = require("./routes/comment");
-const sequelize = require("sequelize");
 
 app.use("/", homeRouter);
 app.use("/", blogRouter);
 app.use("/", userRouter);
 app.use("/", commentRouter);
 
-app.listen(PORT, () => {
-  console.log("App listening on port ${PORT}!");
-  sequelize.sync({ force: false });
+sequelize.sync({ force: false }).then(() => {
+  app.listen(PORT, () => console.log("Now listening"));
 });
