@@ -1,5 +1,4 @@
 const PORT = process.env.PORT || 3000;
-
 const express = require("express");
 const exphbs = require("express-handlebars");
 const app = express();
@@ -11,9 +10,9 @@ const sequelize = require("./db/connection");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
 
 // Handlebars
-var handlebars = exphbs.create();
-app.engine("handlebars", handlebars.engine);
-app.set("view engine", "handlebars");
+var hbs = exphbs.create();
+app.engine("hbs", hbs.engine);
+app.set("view engine", "hbs");
 app.use(express.static(__dirname + "/views"));
 
 // Express session
