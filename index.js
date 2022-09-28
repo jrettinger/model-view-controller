@@ -5,8 +5,6 @@ require("dotenv").config();
 const flash = require("connect-flash");
 const session = require("express-session");
 
-var port = 5000;
-
 // Handlebars
 var handlebars = exphbs.create();
 app.engine("handlebars", handlebars.engine);
